@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 /// The base class for the input view used within `MSGMessengerViewController`.
 /// This can be subclassed to add custom views.
@@ -17,17 +18,13 @@ open class MSGInputView: UIControl {
 
     /// The send button
     @IBOutlet public var sendButton: UIButton!
-
-    /// The send button
-    @IBOutlet public var audioButton: UIButton!
-
-    /// The send button
+    @IBOutlet public var recordButton: UIButton!
     @IBOutlet public var attachButton: UIButton!
     
     @IBOutlet public var audioView: UIView!
+    @IBOutlet public var durationLbl: UILabel!
+    @IBOutlet public var cancelButton: UIButton!
 
-    private(set) open var eventType:Int = 0
-    
     /// The height constraint to be modified as required.
     /// This should not be set manually but instead use the `minHeight` and `maxHeight` properties.
     private var heightConstraint: NSLayoutConstraint!
@@ -43,6 +40,10 @@ open class MSGInputView: UIControl {
     /// The nib the view should be loaded from.
     /// If this isn't set the view will be loaded from code.
     public class var nib: UINib? { return nil }
+    
+    private var timer:Timer?
+    
+    var timeDuration:Int = 0
     
     /// The style guide the input view should use.
     public var style: MSGMessengerStyle? {
@@ -95,7 +96,9 @@ open class MSGInputView: UIControl {
         addHeightConstraints()
         setupTextView()
         setupSendButton()
-        setupAudioButton()
+        setupCancelButton()
+        setupRecordButton()
+        setupAttachmentButton()
     }
 
     private func addHeightConstraints() {
@@ -109,34 +112,88 @@ open class MSGInputView: UIControl {
     }
 
     private func setupSendButton() {
-        sendButton.isEnabled = false
+        sendButton.isEnabled = true
         sendButton.addTarget(self, action: #selector(sendButtonTapped(_:)), for: .touchUpInside)
     }
-    private func setupAudioButton() {
-//        audioButton.isEnabled = true
-//        let longPress:UILongPressGestureRecognizer = UILongPressGestureRecognizer.init(target: self, action:  #selector(longPress(_:)))
-//        longPress.minimumPressDuration = 2
-//        audioButton.addGestureRecognizer(longPress)
-        
-        audioButton.isEnabled = false
-        audioButton.addTarget(self, action: #selector(sendButtonTapped(_:)), for: .touchUpInside)
+    
+    private func setupRecordButton() {
+        recordButton.isEnabled = true
+        let longPress:UILongPressGestureRecognizer = UILongPressGestureRecognizer.init(target: self, action:  #selector(longPress(_:)))
+        longPress.minimumPressDuration = 1
+        recordButton.addGestureRecognizer(longPress)
+    }
+
+    private func setupCancelButton() {
+        cancelButton.isEnabled = true
+        cancelButton.addTarget(self, action: #selector(cancelButtonTapped(_:)), for: .touchUpInside)
+    }
+    
+    private func setupAttachmentButton() {
+        attachButton.isEnabled = true
+        attachButton.addTarget(self, action: #selector(attachmentButtonTapped(_:)), for: .touchUpInside)
     }
     
     @objc func longPress(_ gesture: UILongPressGestureRecognizer) {
-        if gesture.state == UIGestureRecognizerState.began {
-            eventType = 2
+        if (textView.text.count > 0) {
             sendActions(for: .primaryActionTriggered)
+            return
         }
-        else if (gesture.state == UIGestureRecognizerState.ended) {
-            eventType = 3
-            sendActions(for: .primaryActionTriggered)
+        else if gesture.state == UIGestureRecognizerState.began {
+            startRecording()
+            sendActions(for: .touchDragEnter)
         }
     }
     
+    func startRecording()  {
+        audioView.isHidden = false
+        sendButton.isHidden = false
+        recordButton.isHidden = true
+        timeDuration = 0
+        if let timerrunning = timer {
+            timerrunning.invalidate()
+        }
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {[unowned self] timer in
+            self.timeDuration += 1
+            let (m,s) = self.secondsToHoursMinutesSeconds(seconds: self.timeDuration)
+            self.durationLbl.text = String(format: "%02d:%02d", m, s)
+        }
+    }
+    
+    func endRecording () {
+        audioView.isHidden = true
+        sendButton.isHidden = true
+        recordButton.isHidden = false
+        sendButton.backgroundColor = UIColor.clear
+        timeDuration = 0
+        if let timerrunning = timer {
+            timerrunning.invalidate()
+        }
+    }
+    
+    func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int) {
+        return ((seconds % 3600) / 60, (seconds % 3600) % 60)
+    }
+    @objc func cancelButtonTapped(_ sender: UIButton) {
+        endRecording()
+        sendActions(for: .touchCancel)
+    }
+    
+    @objc func attachmentButtonTapped(_ sender: UIButton) {
+        endRecording()
+        sendActions(for: .touchDragInside)
+    }
+    
     @objc func sendButtonTapped(_ sender: UIButton) {
-        message = textView.text
-        textView.text = nil
-        sendActions(for: .primaryActionTriggered)
+        if audioView.isHidden == false {
+            endRecording()
+            sendActions(for: .touchDragExit)
+        }
+        else {
+            message = textView.text
+            textView.text = nil
+            sendActions(for: .primaryActionTriggered)
+        }
     }
     
     @discardableResult open override func resignFirstResponder() -> Bool {
@@ -152,7 +209,14 @@ open class MSGInputView: UIControl {
 extension MSGInputView: MSGPlaceholderTextViewDelegate {
 
     open func textViewDidChange(_ textView: UITextView) {
-        sendButton.isEnabled = textView.text != ""
+        if(textView.text != "") {
+            sendButton.isHidden = false
+            recordButton.isHidden = true
+        }
+        else {
+            sendButton.isHidden = true
+            recordButton.isHidden = false
+        }
         let size = textView.sizeThatFits(CGSize(width: textView.bounds.size.width, height: .infinity))
         let height = size.height + 11
 

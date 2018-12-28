@@ -22,7 +22,7 @@ class MessagesTableViewController: UITableViewController {
         // Load the views before we need them to prevent flashing.
         // This is only required in split view and if we weren't manually loading it would be fine.
         iMessageController.viewControllers.first?.loadViewIfNeeded()
-        travamigosController.viewControllers.first?.loadViewIfNeeded()
+//        travamigosController.viewControllers.first?.loadViewIfNeeded()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

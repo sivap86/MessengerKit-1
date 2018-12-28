@@ -159,6 +159,11 @@ open class MSGMessengerViewController: UIViewController {
     
         messageInputView.addTarget(self, action: #selector(inputViewDidChange(inputView:)), for: .valueChanged)
         messageInputView.addTarget(self, action: #selector(inputViewPrimaryActionTriggered(inputView:)), for: .primaryActionTriggered)
+        messageInputView.addTarget(self, action: #selector(inputViewAudioRecordStartTriggered(inputView:)), for: .touchDragEnter)
+        messageInputView.addTarget(self, action: #selector(inputViewAudioRecordEndTriggered(inputView:)), for: .touchDragExit)
+        messageInputView.addTarget(self, action: #selector(inputViewAudioRecordCancelTriggered(inputView:)), for: .touchCancel)
+        messageInputView.addTarget(self, action: #selector(inputViewAttachFileTriggered(inputView:)), for: .touchDragInside)
+
     }
     
     open func setupCollectionView() {
@@ -190,7 +195,13 @@ open class MSGMessengerViewController: UIViewController {
     
     @objc open dynamic func inputViewPrimaryActionTriggered(inputView: MSGInputView) { }
     
+    @objc open dynamic func inputViewAudioRecordStartTriggered(inputView: MSGInputView) { }
+
+    @objc open dynamic func inputViewAudioRecordEndTriggered(inputView: MSGInputView) { }
+
+    @objc open dynamic func inputViewAudioRecordCancelTriggered(inputView: MSGInputView) { }
     
+    @objc open dynamic func inputViewAttachFileTriggered(inputView: MSGInputView) { }
     // MARK: - Keyboard
     
     @objc open dynamic func keyboardWillShow(_ notification: Notification) {

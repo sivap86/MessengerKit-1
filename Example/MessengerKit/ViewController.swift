@@ -81,6 +81,24 @@ class ViewController: MSGMessengerViewController {
         insert(message)
     }
     
+    override func inputViewAudioRecordStartTriggered(inputView: MSGInputView) {
+        
+    }
+    
+    override func inputViewAudioRecordEndTriggered(inputView: MSGInputView) {
+        
+    }
+    
+    override func inputViewAudioRecordCancelTriggered(inputView: MSGInputView) {
+        
+    }
+    
+    override func inputViewAttachFileTriggered(inputView: MSGInputView) {
+        
+    }
+    
+    
+    
     override func insert(_ message: MSGMessage) {
         
         collectionView.performBatchUpdates({
