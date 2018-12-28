@@ -8,12 +8,6 @@
 
 import UIKit
 
-enum MessageType {
-    case Text
-    case AudioRecordStart
-    case AudioRecordEnd
-}
-
 /// The base class for the input view used within `MSGMessengerViewController`.
 /// This can be subclassed to add custom views.
 open class MSGInputView: UIControl {
@@ -32,7 +26,7 @@ open class MSGInputView: UIControl {
     
     @IBOutlet public var audioView: UIView!
 
-    var messageType:MessageType = MessageType.Text
+    private(set) open var eventType:Int = 0
     
     /// The height constraint to be modified as required.
     /// This should not be set manually but instead use the `minHeight` and `maxHeight` properties.
@@ -101,6 +95,7 @@ open class MSGInputView: UIControl {
         addHeightConstraints()
         setupTextView()
         setupSendButton()
+        setupAudioButton()
     }
 
     private func addHeightConstraints() {
@@ -118,19 +113,22 @@ open class MSGInputView: UIControl {
         sendButton.addTarget(self, action: #selector(sendButtonTapped(_:)), for: .touchUpInside)
     }
     private func setupAudioButton() {
-        audioButton.isEnabled = true
-        let longPress:UILongPressGestureRecognizer = UILongPressGestureRecognizer.init(target: self, action:  #selector(longPress(_:)))
-        longPress.minimumPressDuration = 2
-        audioButton.addGestureRecognizer(longPress)
+//        audioButton.isEnabled = true
+//        let longPress:UILongPressGestureRecognizer = UILongPressGestureRecognizer.init(target: self, action:  #selector(longPress(_:)))
+//        longPress.minimumPressDuration = 2
+//        audioButton.addGestureRecognizer(longPress)
+        
+        audioButton.isEnabled = false
+        audioButton.addTarget(self, action: #selector(sendButtonTapped(_:)), for: .touchUpInside)
     }
     
     @objc func longPress(_ gesture: UILongPressGestureRecognizer) {
         if gesture.state == UIGestureRecognizerState.began {
-            messageType = MessageType.AudioRecordStart
+            eventType = 2
             sendActions(for: .primaryActionTriggered)
         }
         else if (gesture.state == UIGestureRecognizerState.ended) {
-            messageType = MessageType.AudioRecordEnd
+            eventType = 3
             sendActions(for: .primaryActionTriggered)
         }
     }
