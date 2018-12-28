@@ -24,20 +24,13 @@
                     <rect key="frame" x="330" y="10" width="30" height="30"/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="5mJ-Cw-97E"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="N9V-gt-Vmh"/>
                         <constraint firstAttribute="width" constant="30" id="Rxr-d5-dSn"/>
                         <constraint firstAttribute="height" constant="30" id="ZaS-xq-rk5"/>
                     </constraints>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" image="Arrow"/>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Te8-gp-XxF" customClass="MSGImessageSendButton" customModule="MessengerKit" customModuleProvider="target">
-                    <rect key="frame" x="9" y="7" width="32" height="36"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="32" id="Fda-W5-Qko"/>
-                    </constraints>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" image="attachment"/>
                 </button>
                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59M-iC-Ysx" customClass="MSGImessageSendButton" customModule="MessengerKit" customModuleProvider="target">
                     <rect key="frame" x="392" y="10" width="30" height="30"/>
@@ -49,25 +42,35 @@
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" image="record"/>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Te8-gp-XxF" customClass="MSGImessageSendButton" customModule="MessengerKit" customModuleProvider="target">
+                    <rect key="frame" x="8" y="8" width="30" height="34"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="Fda-W5-Qko"/>
+                        <constraint firstAttribute="height" constant="34" id="d39-2L-dF2"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="attachment"/>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="grt-NM-bT7" firstAttribute="leading" secondItem="eQZ-xx-JWZ" secondAttribute="trailing" constant="-40" id="2XY-0y-PxY"/>
-                <constraint firstItem="Te8-gp-XxF" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="7" id="Fr7-uX-n0G"/>
-                <constraint firstItem="grt-NM-bT7" firstAttribute="bottom" secondItem="eQZ-xx-JWZ" secondAttribute="bottom" constant="-5" id="JA7-iA-Alb"/>
-                <constraint firstItem="Te8-gp-XxF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="9" id="MGv-d0-u4u"/>
+                <constraint firstItem="grt-NM-bT7" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="7LN-Cx-zcB"/>
+                <constraint firstItem="Te8-gp-XxF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="MGv-d0-u4u"/>
                 <constraint firstItem="eQZ-xx-JWZ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="SJn-PA-lEg"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="59M-iC-Ysx" secondAttribute="trailing" constant="12" id="Z0a-dC-ZR2"/>
-                <constraint firstItem="grt-NM-bT7" firstAttribute="top" secondItem="eQZ-xx-JWZ" secondAttribute="top" constant="5" id="e8Y-fn-f0Q"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Te8-gp-XxF" secondAttribute="bottom" constant="7" id="hqJ-Ub-nc5"/>
+                <constraint firstItem="Te8-gp-XxF" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="caw-zw-jlL"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="eQZ-xx-JWZ" secondAttribute="trailing" constant="64" id="l6v-w6-uKZ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="eQZ-xx-JWZ" secondAttribute="bottom" constant="5" id="otT-xC-aHz"/>
-                <constraint firstItem="eQZ-xx-JWZ" firstAttribute="leading" secondItem="Te8-gp-XxF" secondAttribute="trailing" constant="12" id="vGg-5Z-LzD"/>
+                <constraint firstItem="eQZ-xx-JWZ" firstAttribute="leading" secondItem="Te8-gp-XxF" secondAttribute="trailing" constant="15" id="vGg-5Z-LzD"/>
                 <constraint firstItem="59M-iC-Ysx" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="zyO-Co-ouL"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="attachButton" destination="Te8-gp-XxF" id="Z0U-ny-E08"/>
+                <outlet property="audioButton" destination="59M-iC-Ysx" id="yUB-1R-Gwi"/>
                 <outlet property="sendButton" destination="grt-NM-bT7" id="gXA-SH-Ei5"/>
                 <outlet property="textView" destination="eQZ-xx-JWZ" id="r2d-pM-wGX"/>
             </connections>
