@@ -10,8 +10,8 @@
 		09CD9CAD8101B37EBD8E2594F9B194FE /* MSGMessageBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C073DB00DD0FFBC8984B7242B89AF4B /* MSGMessageBody.swift */; };
 		0D6A3536C32B00CFBB7CE748AAE03F98 /* MSGTravCollectionViewSectionFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4966158D5DC31593C5910B537E075AC4 /* MSGTravCollectionViewSectionFooter.swift */; };
 		0F5284645FBBA75C757A741ECD5AEC8A /* MSGIncomingTravCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7529C70C45A50100AFC0828FA0ACBD73 /* MSGIncomingTravCollectionViewCell.xib */; };
-		15EF1F5621DE13840009FAFE /* MSGOutgoingVideoCollectionViewCell..xib in Resources */ = {isa = PBXBuildFile; fileRef = 15EF1F5421DE13840009FAFE /* MSGOutgoingVideoCollectionViewCell..xib */; };
-		15EF1F5721DE13840009FAFE /* MSGIncomingVideoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15EF1F5521DE13840009FAFE /* MSGIncomingVideoCollectionViewCell.xib */; };
+		15EF1F5821DE17BB0009FAFE /* MSGIncomingVideoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15EF1F5521DE13840009FAFE /* MSGIncomingVideoCollectionViewCell.xib */; };
+		15EF1F5921DE17BB0009FAFE /* MSGOutgoingVideoCollectionViewCell..xib in Resources */ = {isa = PBXBuildFile; fileRef = 15EF1F5421DE13840009FAFE /* MSGOutgoingVideoCollectionViewCell..xib */; };
 		16445651BF8E2157F5111A552C07D903 /* MSGTravIncomingCollectionViewSectionFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFF3F2AC93BE18B04121044D394C0F08 /* MSGTravIncomingCollectionViewSectionFooter.xib */; };
 		17752CB23A7C71C4C3F3769B7A887B29 /* MSGTravCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3EEF9BBFEABBD8CFC2960FAF220B39 /* MSGTravCollectionView.swift */; };
 		182359F54E1C16BE8D3C96997ED27C71 /* MSGTravamigosStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673DB86BB0EB2F75D414B6A6B3CC8437 /* MSGTravamigosStyle.swift */; };
@@ -822,8 +822,10 @@
 			files = (
 				F8B53F43B72A5934D478C5B349E6779F /* Assets.xcassets in Resources */,
 				D7308D632EEF3B8F8CD9F2C945F47E6E /* MSGImessageIncomingFooterView.xib in Resources */,
+				15EF1F5921DE17BB0009FAFE /* MSGOutgoingVideoCollectionViewCell..xib in Resources */,
 				74CD78F70131AC51402A4DCD719C1D19 /* MSGImessageIncomingHeaderView.xib in Resources */,
 				7B347E252E02B1D9E572E7ABB15CE382 /* MSGImessageInputView.xib in Resources */,
+				15EF1F5821DE17BB0009FAFE /* MSGIncomingVideoCollectionViewCell.xib in Resources */,
 				613B7DD5915EC9FC6896A1A3F8984F33 /* MSGImessageOutgoingFooterView.xib in Resources */,
 				A2DA741C9BD549FC6F1ABA72CB1FB9A9 /* MSGImessageOutgoingHeaderView.xib in Resources */,
 				95A443ED18B8783FE8BA0FCB18B23B80 /* MSGIncomingEmojiCollectionViewCell.xib in Resources */,
@@ -847,8 +849,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D95F003C61F4431C76CCCEB724D15826 /* MessengerKit.bundle in Resources */,
-				15EF1F5621DE13840009FAFE /* MSGOutgoingVideoCollectionViewCell..xib in Resources */,
-				15EF1F5721DE13840009FAFE /* MSGIncomingVideoCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
