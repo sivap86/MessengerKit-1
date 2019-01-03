@@ -25,17 +25,10 @@
                             <constraint firstAttribute="width" constant="269" id="MBM-ua-CR4"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Send" translatesAutoresizingMaskIntoConstraints="NO" id="boq-TF-ue1">
-                        <rect key="frame" x="90" y="50" width="49" height="76"/>
-                    </imageView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="boq-TF-ue1" firstAttribute="leading" secondItem="cFp-Pv-V22" secondAttribute="leading" constant="110" id="3sC-CS-RNc"/>
-                <constraint firstItem="boq-TF-ue1" firstAttribute="trailing" secondItem="cFp-Pv-V22" secondAttribute="trailing" constant="-110" id="6o5-yM-7A2"/>
-                <constraint firstItem="boq-TF-ue1" firstAttribute="top" secondItem="cFp-Pv-V22" secondAttribute="top" constant="50" id="8ns-7O-lLD"/>
                 <constraint firstItem="cFp-Pv-V22" firstAttribute="top" secondItem="nw2-Kp-ZmF" secondAttribute="top" id="Yn9-Go-GO4"/>
-                <constraint firstItem="boq-TF-ue1" firstAttribute="bottom" secondItem="cFp-Pv-V22" secondAttribute="bottom" constant="-50" id="f1S-3k-yke"/>
                 <constraint firstAttribute="bottom" secondItem="cFp-Pv-V22" secondAttribute="bottom" id="pFv-QJ-ceh"/>
                 <constraint firstAttribute="trailing" secondItem="cFp-Pv-V22" secondAttribute="trailing" constant="20" id="zrh-oz-DAN"/>
             </constraints>
@@ -48,7 +41,4 @@
             <point key="canvasLocation" x="-82.5" y="25"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="Send" width="106" height="106"/>
-    </resources>
 </document>

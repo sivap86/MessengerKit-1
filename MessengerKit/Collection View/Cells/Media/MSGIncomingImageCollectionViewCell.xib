@@ -25,19 +25,12 @@
                             <constraint firstAttribute="width" constant="269" id="Gsv-eB-MmU"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Send" translatesAutoresizingMaskIntoConstraints="NO" id="Ca7-aX-05c">
-                        <rect key="frame" x="130" y="50" width="49" height="76"/>
-                    </imageView>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="lTb-3z-uN0" firstAttribute="leading" secondItem="rWJ-Ue-VCr" secondAttribute="leading" constant="20" id="ATr-e8-e47"/>
                 <constraint firstAttribute="bottom" secondItem="lTb-3z-uN0" secondAttribute="bottom" id="CmA-xR-jvU"/>
-                <constraint firstItem="Ca7-aX-05c" firstAttribute="top" secondItem="lTb-3z-uN0" secondAttribute="top" constant="50" id="HIf-f9-ae3"/>
                 <constraint firstItem="lTb-3z-uN0" firstAttribute="top" secondItem="rWJ-Ue-VCr" secondAttribute="top" id="OVt-to-5Zg"/>
-                <constraint firstItem="Ca7-aX-05c" firstAttribute="trailing" secondItem="lTb-3z-uN0" secondAttribute="trailing" constant="-110" id="Poz-zQ-a7d"/>
-                <constraint firstItem="Ca7-aX-05c" firstAttribute="bottom" secondItem="lTb-3z-uN0" secondAttribute="bottom" constant="-50" id="TQK-7d-YS6"/>
-                <constraint firstItem="Ca7-aX-05c" firstAttribute="leading" secondItem="lTb-3z-uN0" secondAttribute="leading" constant="110" id="mHP-2L-9cj"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="djn-0T-8gp"/>
             <size key="customSize" width="269" height="176"/>
@@ -48,7 +41,4 @@
             <point key="canvasLocation" x="-84" y="24.287856071964018"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="Send" width="106" height="106"/>
-    </resources>
 </document>
