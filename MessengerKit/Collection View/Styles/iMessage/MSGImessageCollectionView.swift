@@ -38,6 +38,22 @@ open class MSGImessageCollectionView: MSGCollectionView {
         register(UINib(nibName: "MSGIncomingImageCollectionViewCell", bundle: MessengerKit.bundle),
                  forCellWithReuseIdentifier: "incomingImage")
         
+        // Video
+        register(UINib(nibName: "MSGOutgoingVideoCollectionViewCell", bundle: MessengerKit.bundle),
+                 forCellWithReuseIdentifier: "outgoingVideo")
+        
+        register(UINib(nibName: "MSGIncomingVideoCollectionViewCell", bundle: MessengerKit.bundle),
+                 forCellWithReuseIdentifier: "incomingVideo")
+        
+        // Audio
+        
+        register(UINib(nibName: "MSGOutgoingAudioCollectionViewCell", bundle: MessengerKit.bundle),
+                 forCellWithReuseIdentifier: "outgoingAudio")
+        
+        register(UINib(nibName: "MSGIncomingAudioCollectionViewCell", bundle: MessengerKit.bundle),
+                 forCellWithReuseIdentifier: "incomingAudio")
+        
+        
         // Footers
         
         register(UINib(nibName: "MSGImessageOutgoingFooterView", bundle: MessengerKit.bundle),

@@ -10,6 +10,8 @@
 		09CD9CAD8101B37EBD8E2594F9B194FE /* MSGMessageBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C073DB00DD0FFBC8984B7242B89AF4B /* MSGMessageBody.swift */; };
 		0D6A3536C32B00CFBB7CE748AAE03F98 /* MSGTravCollectionViewSectionFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4966158D5DC31593C5910B537E075AC4 /* MSGTravCollectionViewSectionFooter.swift */; };
 		0F5284645FBBA75C757A741ECD5AEC8A /* MSGIncomingTravCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7529C70C45A50100AFC0828FA0ACBD73 /* MSGIncomingTravCollectionViewCell.xib */; };
+		15EF1F5621DE13840009FAFE /* MSGOutgoingVideoCollectionViewCell..xib in Resources */ = {isa = PBXBuildFile; fileRef = 15EF1F5421DE13840009FAFE /* MSGOutgoingVideoCollectionViewCell..xib */; };
+		15EF1F5721DE13840009FAFE /* MSGIncomingVideoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15EF1F5521DE13840009FAFE /* MSGIncomingVideoCollectionViewCell.xib */; };
 		16445651BF8E2157F5111A552C07D903 /* MSGTravIncomingCollectionViewSectionFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFF3F2AC93BE18B04121044D394C0F08 /* MSGTravIncomingCollectionViewSectionFooter.xib */; };
 		17752CB23A7C71C4C3F3769B7A887B29 /* MSGTravCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3EEF9BBFEABBD8CFC2960FAF220B39 /* MSGTravCollectionView.swift */; };
 		182359F54E1C16BE8D3C96997ED27C71 /* MSGTravamigosStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673DB86BB0EB2F75D414B6A6B3CC8437 /* MSGTravamigosStyle.swift */; };
@@ -103,6 +105,8 @@
 		142BBCFCC7D877C87D117F2CF9E66AF9 /* MSGDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MSGDelegate.swift; sourceTree = "<group>"; };
 		14619B3409339351875FC0D73A609923 /* MSGTailCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MSGTailCollectionViewCell.swift; sourceTree = "<group>"; };
 		1496F0FC5B10E8374A7C43FEFF9D181F /* MessengerKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MessengerKit.xcconfig; sourceTree = "<group>"; };
+		15EF1F5421DE13840009FAFE /* MSGOutgoingVideoCollectionViewCell..xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSGOutgoingVideoCollectionViewCell..xib; sourceTree = "<group>"; };
+		15EF1F5521DE13840009FAFE /* MSGIncomingVideoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSGIncomingVideoCollectionViewCell.xib; sourceTree = "<group>"; };
 		16A00A911BFA9CB9AFBCFFBB8EC34F30 /* MSGImessageInputView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = MSGImessageInputView.xib; sourceTree = "<group>"; };
 		1D85AAA0EAA0325994482D1D7C6CE1D5 /* MessengerKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MessengerKit-prefix.pch"; sourceTree = "<group>"; };
 		20C9C7A18D08306966DC174D90B4A0BB /* MSGIncomingTailCollectionViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = MSGIncomingTailCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -617,6 +621,8 @@
 		C3CA71B3DD30DDEDDC1ECB2AD5C4BDAD /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				15EF1F5521DE13840009FAFE /* MSGIncomingVideoCollectionViewCell.xib */,
+				15EF1F5421DE13840009FAFE /* MSGOutgoingVideoCollectionViewCell..xib */,
 				4DD3D695F2CCE3CFA6ED20D771DBB535 /* MSGIncomingImageCollectionViewCell.xib */,
 				8303BCF0770DE6B88DE25B59FE87D8A9 /* MSGOutgoingImageCollectionViewCell.xib */,
 			);
@@ -841,6 +847,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D95F003C61F4431C76CCCEB724D15826 /* MessengerKit.bundle in Resources */,
+				15EF1F5621DE13840009FAFE /* MSGOutgoingVideoCollectionViewCell..xib in Resources */,
+				15EF1F5721DE13840009FAFE /* MSGIncomingVideoCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
